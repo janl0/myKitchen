@@ -177,7 +177,7 @@
                                     android:background="@color/transparent"
                                     android:src="@drawable/arrow_right"
                                     android:scaleType="centerCrop"
-                                    android:tint="@color/base_primary"
+                                    app:tint="@color/base_primary"
                                     android:layout_gravity="end"/>
 
                             </FrameLayout>
