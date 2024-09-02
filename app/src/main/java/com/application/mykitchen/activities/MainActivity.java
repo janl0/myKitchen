@@ -1,4 +1,4 @@
-package com.application.mykitchen;
+package com.application.mykitchen.activities;
 
 import android.os.Bundle;
 
@@ -8,6 +8,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.application.mykitchen.R;
+import com.application.mykitchen.consumables.Consumable;
+
+import java.lang.reflect.Constructor;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ * @author Jan Lindauer
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
