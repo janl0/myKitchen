@@ -1,4 +1,4 @@
-package com.application.mykitchen;
+package com.application.mykitchen.activities;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,8 +9,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.application.mykitchen.consumables.Beverage;
-import com.application.mykitchen.consumables.Consumable;
+import com.application.mykitchen.R;
+import com.application.mykitchen.entities.Beverage;
+import com.application.mykitchen.entities.Consumable;
 
 import java.lang.reflect.Constructor;
 

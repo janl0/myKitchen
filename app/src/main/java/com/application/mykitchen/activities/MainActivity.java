@@ -1,6 +1,12 @@
 package com.application.mykitchen.activities;
 
 import android.os.Bundle;
+import android.os.TestLooperManager;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,16 +15,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.application.mykitchen.R;
-import com.application.mykitchen.consumables.Consumable;
-
-import java.lang.reflect.Constructor;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author Jan Lindauer
  */
 public class MainActivity extends AppCompatActivity {
+    LinearLayout dishLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +32,30 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        dishLayout = findViewById(R.id.card_view);
+
+        ImageButton btn = findViewById(R.id.basket);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addDish("Spaghetti", R.drawable.spaghetti_sample);
+            }
+        });
+
+        addDish("Spaghetti", R.drawable.spaghetti_sample);
+    }
+
+    private void addDish(String title, Integer img)
+    {
+        View view = getLayoutInflater().inflate(R.layout.dish, null);
+
+        TextView titleView = view.findViewById(R.id.dishTitle);
+        titleView.setText(title);
+
+        ImageView dishImage = view.findViewById(R.id.dishImage);
+        dishImage.setImageResource(img);
+
+        dishLayout.addView(view);
     }
 }

@@ -1,6 +1,4 @@
-package com.application.mykitchen.consumables;
-
-import java.nio.file.Path;
+package com.application.mykitchen.entities;
 
 /**
  * @author Jan Lindauer
