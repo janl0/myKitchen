@@ -6,6 +6,15 @@ package com.application.mykitchen.entities;
 public class Consumable {
     private String name;
     private String surname;
+    private Integer drawable;
+
+    public Integer getDrawable() {
+        return drawable;
+    }
+
+    public void setDrawable(Integer drawable) {
+        this.drawable = drawable;
+    }
 
     /**
      *
