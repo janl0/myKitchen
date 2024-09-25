@@ -4,9 +4,38 @@ package com.application.mykitchen.entities;
  * @author Jan Lindauer
  */
 public class Consumable {
+
+    private int id;
+
     private String name;
     private String surname;
     private Integer drawable;
+    private Float quant;
+    private String unit;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Float getQuant() {
+        return quant;
+    }
+
+    public void setQuant(Float quant) {
+        this.quant = quant;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 
     public Integer getDrawable() {
         return drawable;

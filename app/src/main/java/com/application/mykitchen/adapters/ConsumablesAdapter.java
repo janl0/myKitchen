@@ -12,6 +12,9 @@ import com.application.mykitchen.entities.Consumable;
 
 import java.util.List;
 
+/**
+ * @author Jan Lindauer
+ */
 public class ConsumablesAdapter extends RecyclerView.Adapter<VHConsumablesAdapter.ViewHolder>
 {
     private List<Consumable> consumablesDataSet;
@@ -29,6 +32,7 @@ public class ConsumablesAdapter extends RecyclerView.Adapter<VHConsumablesAdapte
     /**
      * Create new views (invoked by the layout manager)
      */
+    @NonNull
     @Override
     public VHConsumablesAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType)
     {
