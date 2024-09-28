@@ -51,7 +51,7 @@ public class DBService extends SQLiteOpenHelper {
                         CONS_COLUMN_NAME + " TEXT, " +
                         CONS_COLUMN_SURNAME + " TEXT, " +
                         CONS_COLUMN_IMG + " INTEGER, " +
-                        CONS_COLUMN_QUANT + " INTEGER, " +
+                        CONS_COLUMN_QUANT + " TEXT, " +
                         CONS_COLUMN_UNIT + " INTEGER);";
         db.execSQL(queryDishTable);
         db.execSQL(queryConsTable);
@@ -74,6 +74,7 @@ public class DBService extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
+        /*
         Cursor c = db.rawQuery("SELECT * FROM " + CONS_TABLE_NAME +
                 " WHERE " + CONS_COLUMN_NAME + " = " +
                 cons.getName().trim() + ";", null);
@@ -82,11 +83,12 @@ public class DBService extends SQLiteOpenHelper {
         if (c.getCount() != 0)
             return;
 
+         */
         ContentValues cv = new ContentValues();
 
         cv.put(CONS_COLUMN_NAME, cons.getName());
         cv.put(CONS_COLUMN_SURNAME, cons.getSurname() != null ? cons.getSurname() : "");
-        cv.put(CONS_COLUMN_IMG, cons.getDrawable());
+        // TODO: BIlder hinzufügen
         cv.put(CONS_COLUMN_QUANT, cons.getQuant());
         cv.put(CONS_COLUMN_UNIT, cons.getUnit());
 
@@ -94,5 +96,12 @@ public class DBService extends SQLiteOpenHelper {
 
         if(result == -1)
             System.err.println("Beim einsetzten von: " + cons.getName() + " ist etwas schiefgelaufen");
+        else
+            System.out.println("Erfolgreich gespeichert");
+    }
+
+    public void loadConsumable()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
     }
 }

@@ -46,7 +46,7 @@
             android:background="@color/transparent"
             android:scaleType="centerCrop"
             android:src="@drawable/circle"
-            android:foreground="@drawable/add"
+            android:foreground="@drawable/ic_plus"
             app:tint="@color/primary" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

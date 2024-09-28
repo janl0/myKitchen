@@ -10,22 +10,18 @@ public class Consumable {
     private String name;
     private String surname;
     private Integer drawable;
-    private Float quant;
+    private String quant;
     private String unit;
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Float getQuant() {
+    public String getQuant() {
         return quant;
     }
 
-    public void setQuant(Float quant) {
+    public void setQuant(String quant) {
         this.quant = quant;
     }
 

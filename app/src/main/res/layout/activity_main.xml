@@ -23,7 +23,7 @@
             android:layout_margin="15dp"
             android:background="@color/transparent"
             android:scaleType="centerCrop"
-            android:src="@drawable/basket"
+            android:src="@drawable/ic_basket"
             app:tint="@color/primary" />
 
         <ImageButton
@@ -34,7 +34,7 @@
             android:layout_margin="15dp"
             android:background="@color/transparent"
             android:scaleType="centerCrop"
-            android:src="@drawable/settings"
+            android:src="@drawable/ic_settings"
             app:tint="@color/primary" />
     </FrameLayout>
 
@@ -73,7 +73,7 @@
             android:background="@color/transparent"
             android:scaleType="centerCrop"
             android:src="@drawable/circle"
-            android:foreground="@drawable/add"
+            android:foreground="@drawable/ic_plus"
             app:tint="@color/primary" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
