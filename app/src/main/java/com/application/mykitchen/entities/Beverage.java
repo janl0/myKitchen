@@ -1,4 +1,4 @@
-package com.application.mykitchen.consumables;
+package com.application.mykitchen.entities;
 
 /**
  * @author Jan Lindauer
