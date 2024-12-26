@@ -15,8 +15,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Room;
 
 import com.application.mykitchen.R;
+import com.application.mykitchen.database.AppDatabase;
+import com.application.mykitchen.database.DishDAO;
+import com.application.mykitchen.entities.Dish;
+
+import java.util.List;
 
 /**
  * @author Jan Lindauer
@@ -55,7 +61,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        addDish("Spaghetti", R.drawable.spaghetti_sample);
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "tempDB").build();
+
+        DishDAO dishDao = db.dishDao();
+        List<Dish> dishes = dishDao.getAll();
+        for (Dish d : dishes) {
+            addDish(d.getDishTitle(), R.drawable.spaghetti_sample);
+        }
     }
 
     private void addDish(String title, Integer img)

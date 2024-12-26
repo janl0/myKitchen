@@ -21,8 +21,14 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Room;
 
 import com.application.mykitchen.R;
+import com.application.mykitchen.database.AppDatabase;
+import com.application.mykitchen.database.DishDAO;
+import com.application.mykitchen.entities.Dish;
+
+import java.util.List;
 
 public class NewDishActivity extends AppCompatActivity {
     ImageView dishDisplay;
@@ -72,4 +78,13 @@ public class NewDishActivity extends AppCompatActivity {
                     }
                 }
             });
+
+    private void addDishToDB(Dish dish)
+    {
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "tempDB").build();
+
+        DishDAO dishDao = db.dishDao();
+        List<Dish> dishes = dishDao.getAll();
+    }
 }

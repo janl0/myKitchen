@@ -2,7 +2,6 @@ package com.application.mykitchen.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -27,7 +26,6 @@ import com.application.mykitchen.R;
 import com.application.mykitchen.adapters.ConsumablesAdapter;
 import com.application.mykitchen.entities.Beverage;
 import com.application.mykitchen.entities.Consumable;
-import com.application.mykitchen.logic.DBService;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -176,7 +174,7 @@ public class FridgeActivity extends AppCompatActivity
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DBService service = new DBService(context);
+                    //DBService service = new DBService(context);
 
                     Consumable cons = new Consumable();
                     cons.setName(name.getText().toString());
@@ -185,7 +183,7 @@ public class FridgeActivity extends AppCompatActivity
                     cons.setQuant(quant.getText().toString());
                     cons.setUnit(unit.getText().toString());
 
-                    service.addConsumable(cons);
+                    //service.addConsumable(cons);
                     dialog.dismiss();
                 }
             });
